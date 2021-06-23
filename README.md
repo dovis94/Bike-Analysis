@@ -26,7 +26,7 @@ I chose the following metrics out of the dataset for my analysis:
 - Corrected incorrect time data (bike returned earlier than taken out)
 - Trim Whitespace
 - Standardized column type for each month
-** Overall the data was well maintained**
+>**Overall the data was well maintained**
 ## Organization
 I utilized SQL to 
 - Combine the 12 .csv's **June 2020 Until May 2021**
