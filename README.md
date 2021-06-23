@@ -50,3 +50,5 @@ casual 25.95
 [bike data](https://drive.google.com/file/d/1bv1t_CW0l1OEjYjHgqSMFdqclXaiKD7v/view?usp=sharing)
 
 
+![alt text](img/bike_project_2.png)
+
