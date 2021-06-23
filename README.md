@@ -46,15 +46,29 @@ We can see the comparison of
 - Types of bikes preffered (Classic vs Electric)
 ![Dashboard](img/bike_project_4.PNG)
 ## Key Takeaways
-### There is an obvious seasonal trend - more bikeriders in the warmer weather
-### Since the introduction of classic bikes there has been a clear prefference for it
-### More members use the service on weekdays while casual ridership spike on the weekends
+### Top - seasonal trend - more riders in the warmer weather.
+### Bottom left - a clear preference for the classic bike.
+### Bottom Right - Weekend for Casual, Weekdays for Members.
 
-![Average Ride Times](img/avg_ride_times.PNG)
-## Conclusion
-There seems to be an important connection between weekday ridership and members 
-The bikes may be a way for people to commute to work 
-I would suggest focused advertising on the casual riders that used the service between monday and friday. 
+## Discussion
+There is an important connection between weekday ridership and Members. 
+The bikes may be a way for people to commute to work, I will take data from the dataset to see when the majority of rides take place.
+A influx of riders on weekdays during rush hours means that weekday riders are using the service for commuting.
+If this is true we will want to convert *Casual* bike commuters to *Members* because it is more profitable to the company.
+## Further Analysis
+### I ran another search on Bigquery:
+SELECT  date, started_at,ended_at, CAST(started_at AS TIME) AS started_at_time,CAST(ended_at AS TIME) AS ended_at_time, member_casual
+FROM `ancient-figure-315513.bike_project.bike_info`
+WHERE rideable_type != 'docked_bike' AND total_bike_time > 0 AND date != '2020-12-15'
+### With this new dataset I was able to make another graph
+![Dashboard](img/bike_project_5.PNG)
+### The orange *"Member"* shows two peaks one at 8 AM and a second higher one at 5 PM. 
+This suggests that Members use their bikes for commuting.
+### Suggestions
+We want to convert our casual riders to full-time members 
+A significant use for the service is commuting
+We have to appeal to the commuting side of our casual riders
+One possible campaign that is in line with my analysis is:
 The content of the advertisement would be a young proffesional in a suit or other business attire, riding a bike to work.
 This will appeal to the riders that seem to use the bike to travel and not just pleasure (like the weekend users) and will "normalize" biking to work and thus increase membership rates.
 
