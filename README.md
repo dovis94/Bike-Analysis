@@ -1,15 +1,9 @@
----
-Title: "Bike Sharing Analysis"
-Author: "Dov Shtauber"
-Date: "6/22/2021"
----
-
 # Analyzing Bike Sharing Data
 ## How can we convert casual bikers to members?
 A bike sharing company in Chicago collected data on their
 bikeriders.
 They would like to use this data to find out the best way to 
-change any *casual* rider to a member.
+change any *casual* rider to a *member*.
 This conversion is assumed to be easier than acquiring completely new customers because we already have data on the casual riders.
 *Especially that they ride bikes.*
 
@@ -22,13 +16,12 @@ I chose the following metrics out of the dataset for my analysis:
 - Start and end locations.
 
 ## Cleaning The Data
-- Cleaned null values
+- Cleaned null values and trim whitespace
 - Corrected incorrect time data (bike returned earlier than taken out)
-- Trim Whitespace
 - Standardized column type for each month
 >**Overall the data was well maintained**
 ## Organization
-I utilized SQL to 
+I utilized Alteryx to 
 - Combine the 12 .csv's **June 2020 Until May 2021**
 - Created two new varibles, total_bike_time and date 
 - Further filter out any anomolies
@@ -65,10 +58,10 @@ WHERE rideable_type != 'docked_bike' AND total_bike_time > 0 AND date != '2020-1
 ### The orange *"Member"* shows two peaks one at 8 AM and a second higher one at 5 PM. 
 This suggests that Members use their bikes for commuting.
 ### Suggestions
-We want to convert our casual riders to full-time members 
-A significant use for the service is commuting
-We have to appeal to the commuting side of our casual riders
-One possible campaign that is in line with my analysis is:
-The content of the advertisement would be a young proffesional in a suit or other business attire, riding a bike to work.
-This will appeal to the riders that seem to use the bike to travel and not just pleasure (like the weekend users) and will "normalize" biking to work and thus increase membership rates.
+1. We want to convert our casual riders to full-time members.
+2. A significant use for the service is commuting.
+3. We have to appeal to the commuting side of our casual riders.
+- One possible campaign that is in line with my analysis is:
+*The content of the advertisement would be a young proffesional in a suit or other business attire, riding a bike to work.
+This will appeal to the riders that seem to use the bike to travel and not just pleasure (like the weekend users) and will "normalize" biking to work and thus increase membership rates.*
 
