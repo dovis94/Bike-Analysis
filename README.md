@@ -1,3 +1,4 @@
+![Dashboard](img/bike.JPG)
 # Analyzing Bike Sharing Data
 ## How can we convert casual bikers to members?
 A bike sharing company in Chicago collected data on their
