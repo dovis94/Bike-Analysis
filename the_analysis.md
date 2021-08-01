@@ -2,7 +2,7 @@
 # Analyzing Bike Sharing Data
 ## How can we convert casual bikers to members?
 A bike sharing company in Chicago collected data on their
-bikeriders.
+bike riders.
 They would like to use this data to find out the best way to 
 change any *casual* rider to a *member*.
 This conversion is assumed to be easier than acquiring completely new customers because we already have data on the casual riders.
@@ -27,10 +27,12 @@ I utilized Alteryx to
 - Created two new varibles, total_bike_time and date 
 - Further filter out any anomolies
 
+```{r} 
 SELECT *, DATE_DIFF(ended_at, started_at, minute) AS total_bike_time,
 CAST(started_at AS DATE) AS Date
 FROM `ancient-figure-315513.bike_data.bike_project`
 WHERE rideable_type != 'docked_bike' AND total_bike_time > 0
+```
 ## Analyzing Data
 
 With the organized data, I used tableau to create a Viz
@@ -41,7 +43,7 @@ We can see the comparison of
 ![Dashboard](img/bike_project_4.PNG)
 ## Key Takeaways
 ### Top - seasonal trend - more riders in the warmer weather.
-### Bottom left - a clear preference for the classic bike.
+### Bottom left - a clear preference for the classic bike over electric.
 ### Bottom Right - Weekend for Casual, Weekdays for Members.
 
 ## Discussion
@@ -51,9 +53,11 @@ A influx of riders on weekdays during rush hours means that weekday riders are u
 If this is true we will want to convert *Casual* bike commuters to *Members* because it is more profitable to the company.
 ## Further Analysis
 ### I ran another search on Bigquery:
+```{r} 
 SELECT  date, started_at,ended_at, CAST(started_at AS TIME) AS started_at_time,CAST(ended_at AS TIME) AS ended_at_time, member_casual
 FROM `ancient-figure-315513.bike_project.bike_info`
 WHERE rideable_type != 'docked_bike' AND total_bike_time > 0 AND date != '2020-12-15'
+```
 ### With this new dataset I was able to make another graph
 ![Dashboard](img/bike_project_5.PNG)
 ### The orange *"Member"* shows two peaks one at 8 AM and a second higher one at 5 PM. 
